@@ -1,0 +1,28 @@
+body {
+  #mainNoticias {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 3fr 0.5fr;
+    grid-template-areas:
+      "noticiasPrimera aside"
+      "noticiasSub21 aside"
+      "noticiasForm aside"
+      "noticiasFem aside";
+    #noticias1ra {
+      @extend %estiloTextoNot;
+      grid-area: noticiasPrimera;
+    }
+    #noticiasSub21 {
+      @extend %estiloTextoNot;
+      grid-area: noticiasub21;
+    }
+    #noticiasFormativas {
+      @extend %estiloTextoNot;
+      grid-area: noticiasForm;
+    }
+    #noticiasFemenino {
+      @extend %estiloTextoNot;
+      grid-area: noticiasFem;
+    }
+  }
+}

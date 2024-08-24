@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import "./html/index";
+@import "./html/hincha";
+@import "./html/galeria";
+@import "./html/noticias";
+@import "./html/nosotros";
+@import "./utilidades/extend";
+@import "./utilidades/mixin";
+@import "./utilidades/variables";
+
+@media only screen and(max-width: 1024px) {
+  li {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #054598;
+    border-radius: 10px;
+    border: 1px solid #fef9fd;
+    margin-top: 3px;
+    text-align: center;
+  }
+  body {
+    #mainGaleria {
+      img {
+        @include medidas(768px, 335px);
+        object-fit: contain;
+      }
+      video {
+        @include medidas(768px, 335px);
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .h1Header {
+    font-size: 1.5em;
+  }
+  nav ul li a:link,
+  a:visited,
+  a:active {
+    text-decoration: none;
+  }
+
+  li {
+    display: flex;
+
+    background-color: #054598;
+    border-radius: 10px;
+    border: 1px solid #fef9fd;
+    margin-top: 3px;
+    text-align: center;
+    font-weight: bold;
+  }
+  body {
+    header {
+      .divContent {
+        .headerDivh1 {
+          .h1Header {
+            font-size: 1.3em;
+          }
+        }
+      }
+    }
+    main {
+      grid-template-rows: 1fr 1fr 1fr 1fr 0.2fr;
+      grid-template-columns: 1fr 0.1fr;
+      grid-template-areas:
+        "prim prim"
+        "sub21 sub21"
+        "formativas formativas"
+        "fem fem"
+        "aside aside";
+      aside {
+        flex-direction: row;
+      }
+    }
+    .headerGaleria {
+      height: 113px;
+    }
+    #mainGaleria {
+      img {
+        @include medidas(320px, 321px);
+        object-fit: contain;
+      }
+      video {
+        @include medidas(320px, 321px);
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+#mainNosotros {
+  padding: 13px;
+}

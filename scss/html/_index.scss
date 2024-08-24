@@ -1,0 +1,154 @@
+@import "../utilidades/variables";
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 0.1fr 0.2fr 2fr 0.2fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "menu menu"
+    "titulo titulo "
+    "principal principal "
+    "footer footer ";
+  nav {
+    width: 100%;
+    height: 50px;
+    grid-area: menu;
+    justify-content: flex-start;
+    background-color: #2aa821;
+    .fontStyle {
+      font-weight: $tamañoLetra;
+      color: white;
+    }
+
+    ul {
+      list-style-type: none;
+      li {
+        display: inline-block;
+        border-right: 1px solid $colorDos;
+        padding: 5px;
+        font-weight: $tamañoLetra;
+
+        a:link,
+        a:visited,
+        a:active {
+          list-style: none;
+          text-decoration: none;
+          color: $colorUno;
+          font-weight: $tamañoLetra;
+        }
+      }
+    }
+  }
+  header {
+    width: 100%;
+    height: 110px;
+
+    background-color: $colorTres;
+    grid-area: titulo;
+    .divContent {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: center;
+      align-items: flex-start;
+      .headerDivh1 {
+        display: flex;
+        color: $colorUno;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 10px;
+        font-family: "Gayathri", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        text-align: center;
+        .h1Header {
+          font-size: 1.5em;
+        }
+      }
+    }
+  }
+  main {
+    background-color: $colorUno;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -1;
+    display: grid;
+    grid-area: principal;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 0.1fr;
+    grid-template-areas:
+      "prim aside"
+      "sub21 aside"
+      "formativas aside"
+      "fem aside";
+    #primera {
+      grid-area: prim;
+      .divArticle {
+        @extend %estilosArticle;
+        .divH3 {
+          @extend %estiloDivh3;
+        }
+      }
+    }
+    #sub21 {
+      grid-area: sub21;
+      .divArticle1 {
+        @extend %estilosArticle1;
+        .divH3 {
+          @extend %estiloDivh3;
+        }
+      }
+    }
+    #formativas {
+      grid-area: formativas;
+      .divArticle {
+        @extend %estilosArticle;
+        .divH3 {
+          @extend %estiloDivh3;
+        }
+      }
+    }
+    #femenino {
+      grid-area: fem;
+      .divArticle1 {
+        @extend %estilosArticle1;
+        .divH3 {
+          @extend %estiloDivh3;
+        }
+      }
+    }
+    aside {
+      background-color: $colorUno;
+      grid-area: aside;
+      height: 100%;
+      width: auto;
+      border: 3px solid $colorDos;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-around;
+      padding: 9px;
+      margin-top: 12px;
+    }
+  }
+  footer {
+    background-color: $colorDos;
+    grid-area: footer;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    color: white;
+    position: unset;
+    border: 5px solid #2aa821;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    a {
+      color: $colorUno;
+    }
+  }
+}

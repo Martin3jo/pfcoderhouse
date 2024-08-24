@@ -1,0 +1,18 @@
+@import "../utilidades/mixin";
+body {
+  #mainGaleria {
+    display: flex;
+    justify-content: center;
+
+    img {
+      @include medidas(1200px, 425px);
+      object-fit: contain;
+    }
+    .carousel-control-prev-icon {
+      @extend %estiloBoton;
+    }
+    .carousel-control-next-icon {
+      @extend %estiloBoton;
+    }
+  }
+}
